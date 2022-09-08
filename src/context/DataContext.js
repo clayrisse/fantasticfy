@@ -9,15 +9,18 @@ export const DataProvider = ({ children }) => {
   // const [filter, setFilter] = useState('')
   // const [gender, setGender] = useState(null)
   const [userList, setUserList] = useState([]);
-  // const [userProfile, setUserProfile] = useState({})
+  const [showList, setShowList] = useState([]);
+  const [userProfile, setUserProfile] = useState({});
+  const [skill, setSkill] = useState('');
+  const [skillList, setSkillList] = useState([]);
 
   useEffect(() => {
     let mounted = true;
     axios
-      .get('https://random-data-api.com/api/v2/users?size=5')
+      .get('https://random-data-api.com/api/v2/users?size=100')
       .then((data) => {
-        console.log(data.data);
-        if (mounted) setUserList(data);
+        // console.log(data.data);
+        if (mounted) setUserList(data.data);
       })
       .catch((error) => console.log(error));
     return () => (mounted = false);
@@ -37,8 +40,10 @@ export const DataProvider = ({ children }) => {
         // setFilter,
         // gender,
         // setGender,
-        // userProfile,
-        // setUserProfile
+        showList, setShowList,
+        skill, setSkill,
+        skillList, setSkillList,
+        userProfile, setUserProfile,
         userList,
       }}
     >
