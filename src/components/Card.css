@@ -1,6 +1,6 @@
 .card {
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 270px;
   /* min-height: 460px; */
   margin: auto;
   text-align: center;
@@ -53,5 +53,5 @@ p {
 }
 
 h1 {
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
