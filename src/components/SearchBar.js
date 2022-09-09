@@ -10,17 +10,6 @@ export const SearchBar = () => {
 
   const handleChange = (e) => {
       setSearchText(e.target.value)
-      // let xxx = userList.filter((user) => {  
-      //   let fullName = `${user.first_name} ${user.last_name}`
-      //   return user.username.toLowerCase().includes(searchText) 
-      //   || fullName.toLowerCase().includes(searchText.toLowerCase()) 
-      // })
-      // setShowList(xxx)
-      // setFilterList(xxx)
-
-      // console.log('filterList1---', filterList)
-      // console.log('filterList2-', filterList)
-      // setSearchText('')
   }
 
   const handleSubmit = (e) => {
@@ -33,24 +22,12 @@ export const SearchBar = () => {
           return searchText.split(' ')[0] === user.first_name 
           && searchText.split(' ')[1] === user.last_name
         }
-
-        
-        // if (searchText.split(' ').length === 1){
-          return searchText === user.username
-        // }
-
-
+        return searchText === user.username
       })
       setShowList(xxx)
-      console.log('filterList1---', filterList)
       setFilterList(xxx)
-      console.log('filterList2-', filterList)
-      // setSearchText('')
+    }
 
-
-      // console.log(`this.state.term`, this.state.term)
-      // this.props.onFormSubmit(searchText)
-  }
 
   const handleGenderFilter = (e) => {
     console.log('geeeeeeeeeeeeeender', e.target.value)
@@ -61,21 +38,33 @@ export const SearchBar = () => {
     }
   }
 
+  const resetFilters = (userList) => {
+
+    setShowList(userList)
+    setSearchText('')
+  }
+
   return (
     <div className="search-bar ">
 
-      <div className="search-element">
-        <form onSubmit={handleSubmit} className="ui form">
-            <div className="field">
-                <input 
-                    id="inputsearch"   type="text" 
-                    value={searchText} onChange={handleChange}
-                    placeholder="Search full name or username"
-                />
-            </div>
-        </form>
+      <div className="search-element search-pair">
+        <div>
+          <form onSubmit={handleSubmit} className="ui form">
+              <div className="field">
+                  <input 
+                      id="inputsearch"   type="text" 
+                      value={searchText} onChange={handleChange}
+                      placeholder="Search full name or username"
+                  />
+              </div>
+          </form>
+        </div>
+        <div>
+          <button id="search-btn" onClick={handleSubmit}>Search</button>
+        </div>
       </div>
-
+      {/* <div className="search-element">
+      </div> */}
       <div className="search-element">
         <select name="gender" id="gender"  placeholder="Gender" onChange={handleGenderFilter}>
           { genderList.map((gender) => <option key={gender} value={gender}>{gender}</option>)}
@@ -83,7 +72,7 @@ export const SearchBar = () => {
       </div>
 
       <div className="search-element">
-        <button id="reset-btn" onClick={()=>setShowList(userList)}>Reset all users</button>
+        <button id="reset-btn" onClick={()=>resetFilters(userList)}>Reset all users</button>
       </div>
 
     </div>

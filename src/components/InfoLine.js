@@ -14,6 +14,9 @@ const InfoLine = ({user, openProfile}) => {
         <div className='info-line_element'>
           <p className="title">{user.username}</p>
         </div>
+        {/* <div className='info-line_element'>
+          <p className="title">{user.employment.key_skill}</p>
+        </div> */}
         <div className='info-line_element'>
           <button onClick={()=> openProfile(user)}>View Profile</button>
         </div>

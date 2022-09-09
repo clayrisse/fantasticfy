@@ -37,10 +37,10 @@ const ProfilePage = () => {
           style={{ width: '100%', maxWidth: '300px' }}
         />
         <h1>{`${userProfile.first_name} ${userProfile.last_name}`}</h1>
-        <p className="title">{userProfile.username}</p>
+        <p>{userProfile.username}</p>
         <p className="title">{userProfile.employment.title}</p>
         <p className="title">{userProfile.employment.key_skill} 
-          <button className="small-btn" onClick={()=>setIsBtnSkill(!isBtnSkill)}>{`${isBtnSkill? 'see less' : ' see more'}`}</button>
+          <button className="small-btn" onClick={()=>setIsBtnSkill(!isBtnSkill)}>{`${isBtnSkill? 'see less' : 'see more'}`}</button>
         </p>
         { isBtnSkill &&  <div className="line-container">
           { usersBySkill.map( user =>

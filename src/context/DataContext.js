@@ -16,7 +16,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     let mounted = true;
     axios
-    .get('https://random-data-api.com/api/v2/users?size=40')
+    .get('https://random-data-api.com/api/v2/users?size=100')
     .then((data) => {
       if (mounted) { 
         console.log('data.data', data.data)
