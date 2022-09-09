@@ -31,7 +31,7 @@ const GridPage = () => {
 
   return (
     <div>
-      <SearchBar/>
+      <SearchBar setCurrentPage={setCurrentPage}/>
       <Pagination
         cardsPerPage={cardsPerPage}
         totalCards={cards.length}

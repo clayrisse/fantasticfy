@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import DataContext from '../context/DataContext';
 import './SearchBar.css'
 
-export const SearchBar = () => {
+export const SearchBar = ({ setCurrentPage }) => {
 
   const [filterList, setFilterList] = useState([])
   const {searchText, setSearchText, showList, setShowList, genderList, userList} = useContext(DataContext);
@@ -31,10 +31,12 @@ export const SearchBar = () => {
 
   const handleGenderFilter = (e) => {
     console.log('geeeeeeeeeeeeeender', e.target.value)
-    if (e.target.value !== 'All') {
+    if (e.target.value !== 'All Genders') {
       setShowList(userList.filter((user) => user.gender === e.target.value))
+      setCurrentPage(1)
     } else {
       setShowList(userList)
+      setCurrentPage(1)
     }
   }
 
