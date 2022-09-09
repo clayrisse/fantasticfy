@@ -9,9 +9,7 @@ function App() {
   return (
     <DataProvider>
       <Router>
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
+        
         <Routes>
           <Route exact path="/" element={<GridPage />} />
           <Route exact path="/user/:userId" element={<ProfilePage />} />

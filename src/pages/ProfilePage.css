@@ -1,6 +1,6 @@
 .profile {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 600px;
+  max-width: 750px;
   margin: auto;
   text-align: center;
 }
@@ -10,13 +10,26 @@
   font-size: 18px;
 }
 
+.line-container {
+  box-shadow: 4px 5px 8px 2px rgba(0, 0, 0, 0.4);
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
 .info {
-  /* color: grey; */
-  /* font-size: 18px; */
   text-align: left;
 }
 
-
+.info-detail {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 30px 40px;
+  padding-bottom: 20px;
+}
 
 a {
   text-decoration: none;
@@ -24,6 +37,17 @@ a {
   color: black;
 }
 
+.small-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 5px;
+  color: rgb(192, 184, 118);
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}
 
 button:hover,
 a:hover {
@@ -33,5 +57,5 @@ a:hover {
 .small-btn {
   width: 10%;
   background-color: #fff;
-  
+
 }

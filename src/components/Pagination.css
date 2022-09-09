@@ -1,0 +1,34 @@
+.pagination_section {
+  width: 90%;
+  min-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 30px 5px;
+}
+
+.pagination_section .page-item {
+  color: black;
+  padding: 0px 18px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.page-item:hover {
+  background-color: #ff0 !important;
+  color: #000;
+}
+
+/* .page-item:nth-child(3) {
+  background-color: #000;
+  color: white;
+} */
+
+.content {
+  margin: 50px;
+  padding: 15px;
+  width: 700px;
+  height: 200px;
+  border: 2px solid black;
+}

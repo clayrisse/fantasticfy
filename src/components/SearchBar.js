@@ -10,16 +10,16 @@ export const SearchBar = () => {
 
   const handleChange = (e) => {
       setSearchText(e.target.value)
-      // console.log('searchText', searchText)
-      let xxx = userList.filter((user) => {  
-        let fullName = `${user.first_name} ${user.last_name}`
-        return user.username.toLowerCase().includes(searchText) 
-        || fullName.toLowerCase().includes(searchText.toLowerCase()) 
-      })
-      setShowList(xxx)
-      console.log('filterList1---', filterList)
-      setFilterList(xxx)
-      console.log('filterList2-', filterList)
+      // let xxx = userList.filter((user) => {  
+      //   let fullName = `${user.first_name} ${user.last_name}`
+      //   return user.username.toLowerCase().includes(searchText) 
+      //   || fullName.toLowerCase().includes(searchText.toLowerCase()) 
+      // })
+      // setShowList(xxx)
+      // setFilterList(xxx)
+
+      // console.log('filterList1---', filterList)
+      // console.log('filterList2-', filterList)
       // setSearchText('')
   }
 
@@ -63,29 +63,29 @@ export const SearchBar = () => {
 
   return (
     <div className="search-bar ">
-      <label htmlFor="gender">Gender:</label>
 
-      <select name="gender" id="gender"  placeholder="Gender" onChange={handleGenderFilter}>
-        { genderList.map((gender) => <option key={gender} value={gender}>{gender}</option>)}
-      </select>
+      <div className="search-element">
+        <form onSubmit={handleSubmit} className="ui form">
+            <div className="field">
+                <input 
+                    id="inputsearch"   type="text" 
+                    value={searchText} onChange={handleChange}
+                    placeholder="Search full name or username"
+                />
+            </div>
+        </form>
+      </div>
 
-      <button onClick={()=>setShowList(userList)}>Reset all users</button>
+      <div className="search-element">
+        <select name="gender" id="gender"  placeholder="Gender" onChange={handleGenderFilter}>
+          { genderList.map((gender) => <option key={gender} value={gender}>{gender}</option>)}
+        </select>
+      </div>
 
-      <form onSubmit={handleSubmit} className="ui form">
-          <div className="field">
-              {/* <label htmlFor="inputsearch">Search full name or username </label> */}
-              <input 
-                  id="inputsearch" 
-                  type="text" 
-                  value={searchText}
-                  onChange={handleChange}
-                  placeholder="Search full name or username"
+      <div className="search-element">
+        <button id="reset-btn" onClick={()=>setShowList(userList)}>Reset all users</button>
+      </div>
 
-              />
-          </div>
-      </form>
-
-
-  </div>
+    </div>
   )
 }

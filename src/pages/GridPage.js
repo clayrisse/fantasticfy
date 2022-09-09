@@ -11,40 +11,40 @@ const GridPage = () => {
   const [cards, setCards] = useState(showList);
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(10);
-  // console.log('userList', userList);
-
-  // const showList = userList.filter((user) => user.gender === 'TeamA');
-  // console.log('showList', sh wList)
-  // useEffect
+  // const [isActive, setIsActive] = useState(false);
 
   useEffect(() => setCards(showList) ,[showList])
-  
-  //  Get current cards
+
   const iLastCard = currentPage * cardsPerPage;
   const iFirstCard = iLastCard - cardsPerPage;
   const currentCards = cards.slice(iFirstCard, iLastCard);
  
-  //  // Change page
-  const paginate = pageNum => setCurrentPage(pageNum);
+  const paginate = pageNum => {
+    setCurrentPage(pageNum);
+    // if(pageNum ===currentPage) setIsActive(current => !current);
+    console.log('pageNum', pageNum, 'pageNum', pageNum)
+    // if(pageNum ===currentPage) {
+    //   setIsActive(!isActive);
 
-  // console.log('showList', showList)
-  console.log('cards', cards)
+    // }
+  }
+
   return (
     <div>
-      GridPage
       <SearchBar/>
-      <br/>
-      <br/>
-      <br/>
       <Pagination
         cardsPerPage={cardsPerPage}
         totalCards={cards.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
       <div className="grid-container">
-        {/* { showList.map((user, index) => { */}
         { currentCards.map((user, index) => {
-          return !user.isDone && <Card key={user.uid} userObj={user} index={index}/>;
+          return !user.isDone && <Card 
+          key={user.uid} 
+          userObj={user} 
+          index={index} 
+          />;
         })}
       </div>
     </div>

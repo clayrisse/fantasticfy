@@ -16,12 +16,13 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     let mounted = true;
     axios
-    .get('https://random-data-api.com/api/v2/users?size=50')
+    .get('https://random-data-api.com/api/v2/users?size=40')
     .then((data) => {
       if (mounted) { 
+        console.log('data.data', data.data)
         setUserList(data.data);
         setShowList(data.data);
-        let listGender = ['All']
+        let listGender = ['All Genders']
         data.data.forEach((user) => {
           if (!listGender.includes(user.gender)) listGender.push(user.gender)
         })
