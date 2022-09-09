@@ -1,6 +1,6 @@
 .card {
   box-shadow: 4px 5px 8px 2px rgba(0, 0, 0, 0.4);
-  max-width: 270px;
+  max-width: 250px;
   margin: auto;
   text-align: center;
   transition: all .1s ease-in-out;
@@ -10,14 +10,14 @@
   transform: scale(1.05);
 }
 
-.title {
+.card .title {
   color: grey;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .mini {
   color: grey;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .card button {
@@ -25,12 +25,12 @@
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: #ccc;
+  color: #eee;
   background-color: #000;
   text-align: center;
   cursor: pointer;
   width: 50%;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 a {
@@ -46,10 +46,10 @@ a:hover {
   color: black;
 }
 
-p {
+/* p {
   line-height: 1.1rem;
-}
+} */
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }

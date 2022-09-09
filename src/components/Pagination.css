@@ -13,6 +13,8 @@
   padding: 0px 18px;
   text-decoration: none;
   text-align: center;
+  line-height: .8rem;
+  border-radius: 50%;
 }
 
 .page-item:hover {
